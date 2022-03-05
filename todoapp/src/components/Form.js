@@ -9,11 +9,13 @@ const Form = ({setInputText,todos, setTodos, inputText, setStatus}) => {
   };
 
   const submitTodoHandler = (e) => {
-    e.preventDefault();
+    e.preventDefault();~
     setTodos([
-      ...todos, {text: inputText, completed: false, id: Math.random()}
+      ...todos, {text: inputText, completed: true, id: Math.random()}
     ]);
     setInputText("");
+
+
   };
   const statusHandler = (e) => {
     setStatus(e.target.value);
