@@ -16,8 +16,7 @@ class App extends React.Component {
 
         <h1>Todos Site</h1>
         <div id="tobe">
-        <h2>Log in</h2>
-
+        <h2>Log-in Site</h2>
         <div>
           <div>
             <label name="username" for="username">Username:</label>
@@ -29,8 +28,7 @@ class App extends React.Component {
           </div>
         </div>
 
-        <button id="login" onClick= {async () => {await this.clickHere();} }>Log in</button>
-
+        <button id="login" onClick= {async()=>{await this.clickHere}}>Log in</button>
         <p><a href="create.html">Need an account?</a></p>
         </div>
           <div id = "user"></div>

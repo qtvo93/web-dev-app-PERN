@@ -12,10 +12,9 @@ function removeChildren(element) {
 		element.lastChild.remove();
 	}
 }
-
 //document.getElementById("login").onclick =  
-const clickHere = async function () {
-	await fetch("/auth", {
+const clickHere = function () {
+	fetch("/auth", {
 		method: "POST",
 		headers: {
 			"Content-Type": "application/json"
@@ -31,9 +30,9 @@ const clickHere = async function () {
 			button.append(input);
 			let buttonCreate = document.createElement("button");
 			buttonCreate.textContent = "Create Task";
-			buttonCreate.onclick =async function () {
+			buttonCreate.onclick =function () {
 			//console.log(input.value);
-                await fetch("/add", {
+                 fetch("/add", {
 					method: "POST",
 					headers: {
 						"Content-Type": "application/json"
@@ -45,10 +44,10 @@ const clickHere = async function () {
 					})
 				})
 			}
-			buttonCreate.onclick = async function () {
+			buttonCreate.onclick =  function () {
 				console.log(usernameInput.value);
 				let requestURL = `/add?username=${usernameInput.value}`;
-				await fetch(requestURL).then(function (response) {
+				fetch(requestURL).then(function (response) {
 					if (response.status === 200) {
 						return response.json();
 					} else {
@@ -63,8 +62,8 @@ const clickHere = async function () {
 						let status = row["status"];
 						
 						let tableRow = document.createElement("tr");
-						tableRow.onclick = async function () {
-							await fetch("/update", {
+						tableRow.onclick =  function () {
+							 fetch("/update", {
 								method: "POST",
 								headers: {
 									"Content-Type": "application/json"
@@ -115,8 +114,8 @@ const clickHere = async function () {
             
 			for (let i=0; i < tasks.length; i++) {
 				let tableRow = document.createElement("tr");
-				tableRow.onclick = async function () {
-							await fetch("/update", {
+				tableRow.onclick = function () {
+							fetch("/update", {
 								method: "POST",
 								headers: {
 									"Content-Type": "application/json"
