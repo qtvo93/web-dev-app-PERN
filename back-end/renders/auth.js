@@ -28,8 +28,13 @@ router.post("/register", validInfo, async (req, res) => {
               )
                 .then(function (response) {
                     // account successfully created
+                    pool.query("SELECT * FROM users WHERE user_email = $1", [
+                        email
+                      ]).then(function (response) {
                     const jwtToken = jwtGenerator(response.rows[0].user_id);
+                    //console.log(jwtToken);
                     res.status(200).json({ jwtToken });
+                    })
                   
                 })
                 .catch(function (error) {
@@ -67,6 +72,7 @@ router.post("/login", validInfo, async (req, res) => {
               if (isSame) {
                   // password matched
                   const jwtToken = jwtGenerator(response.rows[0].user_id);
+                  //console.log(jwtToken);
                   res.status(200).json({ jwtToken });
               } else {
                   // password didn't match
