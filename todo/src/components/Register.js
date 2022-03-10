@@ -19,7 +19,7 @@ const Register = ({ setAuth }) => {
     try {
       const body = { email, password, name };
       const response = await fetch(
-        "http://localhost:5000/authentication/register",
+        "http://localhost:5000/auth/register",
         {
           method: "POST",
           headers: {
@@ -29,7 +29,7 @@ const Register = ({ setAuth }) => {
         }
       );
       const parseRes = await response.json();
-
+      console.log(parseRes);
       if (parseRes.jwtToken) {
         localStorage.setItem("token", parseRes.jwtToken);
         setAuth(true);

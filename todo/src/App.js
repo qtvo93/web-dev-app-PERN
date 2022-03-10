@@ -4,8 +4,8 @@ import "react-toastify/dist/ReactToastify.css";
 import {
   BrowserRouter as Router,
   Route,
-  Routes,
-  Navigate
+  Switch,
+  Redirect
 } from "react-router-dom";
 
 import { toast } from "react-toastify";
@@ -49,7 +49,7 @@ function App() {
     <Fragment>
       <Router>
         <div className="container">
-          <Routes>
+          <Switch>
             <Route
               exact
               path="/"
@@ -57,7 +57,7 @@ function App() {
                 !isAuthenticated ? (
                   <Landing {...props} />
                 ) : (
-                  <Navigate to="/dashboard" />
+                  <Redirect to="/dashboard" />
                 )
               }
             />
@@ -68,7 +68,7 @@ function App() {
                 !isAuthenticated ? (
                   <Login {...props} setAuth={setAuth} />
                 ) : (
-                  <Navigate to="/dashboard" />
+                  <Redirect to="/dashboard" />
                 )
               }
             />
@@ -79,7 +79,7 @@ function App() {
                 !isAuthenticated ? (
                   <Register {...props} setAuth={setAuth} />
                 ) : (
-                  <Navigate to="/dashboard" />
+                  <Redirect to="/dashboard" />
                 )
               }
             />
@@ -90,11 +90,11 @@ function App() {
                 isAuthenticated ? (
                   <Dashboard {...props} setAuth={setAuth} />
                 ) : (
-                  <Navigate to="/login" />
+                  <Redirect to="/login" />
                 )
               }
             />
-          </Routes>
+          </Switch>
         </div>
       </Router>
     </Fragment>
