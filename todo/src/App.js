@@ -1,51 +1,104 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
-import {Helmet} from "react-helmet";
-import clickHere from "./pages/Loginscript.js";
+import React, { Fragment, useState, useEffect } from "react";
 
-class App extends React.Component {
-  render(){
-    return (
-      <div className = "App">
-        <Helmet>
-          <meta charset="utf-8" />
-          <title>Log in</title>
-          <script src="./pages/Loginscript.js" type="text/babel"> </script>
-        </Helmet>
+import "react-toastify/dist/ReactToastify.css";
+import {
+  BrowserRouter as Router,
+  Route,
+  Routes,
+  Navigate
+} from "react-router-dom";
 
-        <h1>Todos Site</h1>
-        <div id="tobe">
-        <h2>Log-in Site</h2>
-        <div>
-          <div>
-            <label name="username" for="username">Username:</label>
-            <input type="text" id="username" />
-          </div>
-          <div>
-            <label name="password" for="password">Password:</label>
-            <input type="password" id="password" />
-          </div>
+import { toast } from "react-toastify";
+
+//components
+
+import Login from "./components/Login";
+import Register from "./components/Register";
+import Dashboard from "./components/dashboard/Dashboard";
+import Landing from "./components/Landing";
+
+toast.configure();
+
+function App() {
+  const checkAuthenticated = async () => {
+    try {
+      const res = await fetch("http://localhost:5000/auth/verify", {
+        method: "POST",
+        headers: { jwt_token: localStorage.token }
+      });
+
+      const parseRes = await res.json();
+
+      parseRes === true ? setIsAuthenticated(true) : setIsAuthenticated(false);
+    } catch (err) {
+      console.error(err.message);
+    }
+  };
+
+  useEffect(() => {
+    checkAuthenticated();
+  }, []);
+
+  const [isAuthenticated, setIsAuthenticated] = useState(false);
+
+  const setAuth = boolean => {
+    setIsAuthenticated(boolean);
+  };
+
+  return (
+    <Fragment>
+      <Router>
+        <div className="container">
+          <Routes>
+            <Route
+              exact
+              path="/"
+              render={props =>
+                !isAuthenticated ? (
+                  <Landing {...props} />
+                ) : (
+                  <Navigate to="/dashboard" />
+                )
+              }
+            />
+            <Route
+              exact
+              path="/login"
+              render={props =>
+                !isAuthenticated ? (
+                  <Login {...props} setAuth={setAuth} />
+                ) : (
+                  <Navigate to="/dashboard" />
+                )
+              }
+            />
+            <Route
+              exact
+              path="/register"
+              render={props =>
+                !isAuthenticated ? (
+                  <Register {...props} setAuth={setAuth} />
+                ) : (
+                  <Navigate to="/dashboard" />
+                )
+              }
+            />
+            <Route
+              exact
+              path="/dashboard"
+              render={props =>
+                isAuthenticated ? (
+                  <Dashboard {...props} setAuth={setAuth} />
+                ) : (
+                  <Navigate to="/login" />
+                )
+              }
+            />
+          </Routes>
         </div>
-
-        <button id="login" onClick= {async()=>{await this.clickHere}}>Log in</button>
-        <p><a href="create.html">Need an account?</a></p>
-        </div>
-          <div id = "user"></div>
-          <div id = "message"></div>
-          <div id = "createTasks"></div>
-          <table>
-            <tr><th>Task Pending</th></tr>
-            <tbody id="tasksPending"></tbody>
-          </table>
-          <table>
-            <tr><th>Task Done</th></tr>
-            <tbody id="tasksDone"></tbody>
-          </table>  
-     
-      </div>
-    );
-  }
+      </Router>
+    </Fragment>
+  );
 }
 
 export default App;
