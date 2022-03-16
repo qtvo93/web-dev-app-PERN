@@ -22,8 +22,10 @@ CREATE TABLE todos(
   FOREIGN KEY (user_id) REFERENCES users(user_id)
 );
 
-Schema 
-![image]
+Schema
+
+![image]![111111111](https://user-images.githubusercontent.com/72519491/158517780-a4b2d9a2-6a0e-4825-9438-44cb592bda61.PNG)
+
 
 2. Front-end:
 -> cd into the front-end directory
