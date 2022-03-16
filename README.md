@@ -6,7 +6,7 @@ How to set up the dev server:
 
 -> Open PosgresQl and run:
 
-$pql --username postgres
+$psql --username postgres
 
 -> enter your password
 
