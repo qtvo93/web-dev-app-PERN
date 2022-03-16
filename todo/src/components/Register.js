@@ -29,7 +29,7 @@ const Register = ({ setAuth }) => {
         }
       );
       const parseRes = await response.json();
-      console.log(parseRes);
+      //console.log(parseRes);
       if (parseRes.jwtToken) {
         localStorage.setItem("token", parseRes.jwtToken);
         setAuth(true);
@@ -51,7 +51,7 @@ const Register = ({ setAuth }) => {
           type="text"
           name="email"
           value={email}
-          placeholder="email"
+          placeholder="user_email"
           onChange={e => onChange(e)}
           className="form-control my-3"
         />
@@ -67,7 +67,7 @@ const Register = ({ setAuth }) => {
           type="text"
           name="name"
           value={name}
-          placeholder="name"
+          placeholder="user_name"
           onChange={e => onChange(e)}
           className="form-control my-3"
         />

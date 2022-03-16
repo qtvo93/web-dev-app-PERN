@@ -4,10 +4,22 @@ const bcrypt = require("bcrypt");
 const pool = require("../db");
 const validInfo = require("../validations/serverValidation");
 const authorize = require("../validations/authorize");
-const jwtGenerator = require("../validations/jwtGenerator");
+//const jwtGenerator = require("../validations/jwtGenerator");
 const saltRounds = 10;
 
-//authorizeentication
+const jwt = require("jsonwebtoken");
+require("dotenv").config();
+
+function jwtGenerator(user_id) {
+  const payload = {
+    user: {
+      id: user_id
+    }
+  };
+
+
+  return jwt.sign(payload, process.env.jwtSecret, { expiresIn: 60*30});
+}
 
 router.post("/register", validInfo, async (req, res) => {
    //console.log(req.body);

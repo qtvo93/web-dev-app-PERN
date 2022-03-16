@@ -20,13 +20,7 @@ const ListTodos = ({ allTodos, setTodosChange }) => {
     }
   }
 
-  // async function getTodos() {
-  //   const res = await fetch("http://localhost:5000/todos");
 
-  //   const todoArray = await res.json();
-
-  //   setTodos(todoArray);
-  // }
 
   useEffect(() => {
     setTodos(allTodos);
@@ -40,17 +34,13 @@ const ListTodos = ({ allTodos, setTodosChange }) => {
       <table className="table mt-5">
         <thead>
           <tr>
-            <th>Description</th>
-            <th>Edit</th>
-            <th>Delete</th>
+            <th>To-do Tasks</th>
+            <th>Edit Task</th>
+            <th>Done and Remove</th>
           </tr>
         </thead>
         <tbody>
-          {/*<tr>
-            <td>John</td>
-            <td>Doe</td>
-            <td>john@example.com</td>
-          </tr> */}
+          {}
 
           {todos.length !== 0 &&
             todos[0].todo_id !== null &&
@@ -60,12 +50,13 @@ const ListTodos = ({ allTodos, setTodosChange }) => {
                 <td>
                   <EditTodo todo={todo} setTodosChange={setTodosChange} />
                 </td>
+              
                 <td>
                   <button
-                    className="btn btn-danger"
-                    onClick={() => deleteTodo(todo.todo_id)}
+                    className="btn btn-danger" 
+                   onClick={() => deleteTodo(todo.todo_id)}
                   >
-                    Delete
+                    ㅤㅤ ✕ ㅤㅤ
                   </button>
                 </td>
               </tr>
@@ -75,5 +66,6 @@ const ListTodos = ({ allTodos, setTodosChange }) => {
     </Fragment>
   );
 };
+
 
 export default ListTodos;

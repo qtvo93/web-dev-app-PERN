@@ -7,7 +7,7 @@ router.get("/",authorize , async (req, res) => {
   try {
 
     const user = await pool.query(
-      "SELECT u.user_name, t.todo_id, t.description FROM users AS u LEFT JOIN todos AS t ON u.user_id = t.user_id WHERE u.user_id = $1",
+      "SELECT u.user_email, u.user_name, t.todo_id, t.description FROM users AS u LEFT JOIN todos AS t ON u.user_id = t.user_id WHERE u.user_id = $1",
       [req.user.id]
     );
 
@@ -40,7 +40,7 @@ router.post("/todos", authorize , async (req, res) => {
 router.put("/todos/:id",authorize , async (req, res) => {
   try {
     const { id } = req.params;
-    const { description } = req.body;
+    const { description, status } = req.body;
     const updateTodo = await pool.query(
       "UPDATE todos SET description = $1 WHERE todo_id = $2 AND user_id = $3 RETURNING *",
       [description, id, req.user.id]
