@@ -4,6 +4,12 @@ How to set up the dev server:
 
 1. Database:
 
+-> Open PosgresQl and run:
+
+$pql --username postgres
+
+-> enter your password
+
 CREATE DATABASE finalproject;
 
 CREATE TABLE users(
