@@ -22,9 +22,9 @@ CREATE TABLE todos(
   FOREIGN KEY (user_id) REFERENCES users(user_id)
 );
 
-Schema
+Schema Tables
 
-![image]![111111111](https://user-images.githubusercontent.com/72519491/158517780-a4b2d9a2-6a0e-4825-9438-44cb592bda61.PNG)
+![111111111](https://user-images.githubusercontent.com/72519491/158517780-a4b2d9a2-6a0e-4825-9438-44cb592bda61.PNG)
 
 
 2. Front-end:
@@ -51,7 +51,7 @@ $npm install pg jsonwebtoken bcrypt cors express nodemon
 
 $nodemon server.js
 
-4. Web browser:
+4. Web browser demo:
 
 localhost:3000
 
