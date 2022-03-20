@@ -5,7 +5,7 @@ The web application was built using PostgresQL - Express - React - Nodejs tech s
 
 -> How to set up the dev server:
 
-#1. Database:
+# 1. Database:
 
 -> Open PosgresQl and run:
 
@@ -38,7 +38,7 @@ Schema Tables
 ![111111111](https://user-images.githubusercontent.com/72519491/158517780-a4b2d9a2-6a0e-4825-9438-44cb592bda61.PNG)
 
 
-2. Front-end:
+# 2. Front-end:
 -> cd into the front-end directory
 
 $cd todo
@@ -48,7 +48,7 @@ $npm install react-toastify react-router-dom@5.3.0
 $npm start
 
 
-3. Back-end:
+# 3. Back-end:
 
 -> cd into the back-end directory
 
