@@ -1,8 +1,11 @@
 # web-dev-course-final
 
-How to set up the dev server:
 
-1. Database:
+The web application was built using PostgresQL - Express - React - Nodejs tech stack
+
+-> How to set up the dev server:
+
+#1. Database:
 
 -> Open PosgresQl and run:
 
@@ -11,6 +14,8 @@ $psql --username postgres
 -> enter your password
 
 CREATE DATABASE finalproject;
+
+(enable uuid_generate_v4() extension to use)
 
 CREATE TABLE users(
   user_id UUID DEFAULT uuid_generate_v4(),
