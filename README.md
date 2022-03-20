@@ -62,7 +62,7 @@ $npm install pg jsonwebtoken bcrypt cors express nodemon
 
 $nodemon server.js
 
-4. Web browser demo:
+# 4. Web browser demo:
 
 localhost:3000
 
