@@ -1,7 +1,7 @@
 # web-dev-course-final
 
 
-The web application was built using PostgresQL - Express - React - Nodejs tech stack
+The web application was built using PostgresQL - Express - React - Nodejs (PERN) tech stack
 
 -> How to set up the dev server:
 
