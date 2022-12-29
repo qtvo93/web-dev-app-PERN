@@ -1,4 +1,7 @@
-# web-dev-course-final
+# web-dev-project
+
+## Design Architecture
+![image](https://user-images.githubusercontent.com/72519491/209999997-9bb95267-dde9-4996-978c-afe5ea60fc78.png)
 
 
 The web application was built using PostgresQL - Express - React - Nodejs (PERN) tech stack
