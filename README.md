@@ -1,10 +1,9 @@
 # web-dev-project
+The Todo web application was built using PostgresQL - Express - React - Nodejs (PERN) tech stack
 
 ## Design Architecture
 ![image](https://user-images.githubusercontent.com/72519491/209999997-9bb95267-dde9-4996-978c-afe5ea60fc78.png)
 
-
-The web application was built using PostgresQL - Express - React - Nodejs (PERN) tech stack
 
 -> How to set up the dev server:
 
