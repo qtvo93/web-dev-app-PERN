@@ -1,4 +1,5 @@
 import React, { Fragment, useState } from "react";
+import * as MdIcons from "react-icons/md";
 
 const EditTodo = ({ todo, setTodosChange }) => {
   //editText function
@@ -29,13 +30,14 @@ const EditTodo = ({ todo, setTodosChange }) => {
   const [description, setDescription] = useState(todo.description);
   return (
     <Fragment>
+      <div style={{fontFamily: 'Source Sans Pro'}}>
       <button
         type="button"
-        className="btn btn-primary"
+        className="btn btn-warning"
         data-toggle="modal"
         data-target={`#id${todo.todo_id}`}
       >
-        Edit
+        <MdIcons.MdEdit size={15}/>
       </button>
       {/* id = "id21"*/}
       <div
@@ -46,7 +48,7 @@ const EditTodo = ({ todo, setTodosChange }) => {
         <div className="modal-dialog">
           <div className="modal-content">
             <div className="modal-header">
-              <h4 className="modal-title">Edit Todo</h4>
+              <h4 className="modal-title" style={{fontFamily: 'Source Sans Pro'}}>Edit Todo</h4>
               <button
                 type="button"
                 className="close"
@@ -72,6 +74,7 @@ const EditTodo = ({ todo, setTodosChange }) => {
                 className="btn btn-warning"
                 data-dismiss="modal"
                 onClick={() => editText(todo.todo_id)}
+                style={{fontFamily: 'Source Sans Pro'}}
               >
                 Edit
               </button>
@@ -80,12 +83,14 @@ const EditTodo = ({ todo, setTodosChange }) => {
                 className="btn btn-danger"
                 data-dismiss="modal"
                 onClick={() => setDescription(todo.description)}
+                style={{fontFamily: 'Source Sans Pro'}}
               >
                 Close
               </button>
             </div>
           </div>
         </div>
+      </div>
       </div>
     </Fragment>
   );

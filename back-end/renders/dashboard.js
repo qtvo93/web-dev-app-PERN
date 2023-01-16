@@ -11,7 +11,6 @@ router.get("/",authorize , async (req, res) => {
       [req.user.id]
     );
 
-    console.log(user.rows)
     res.json(user.rows);
   } catch (err) {
     console.error(err.message);
@@ -42,9 +41,6 @@ router.put("/todos/:id",authorize , async (req, res) => {
   try {
     const { id } = req.params;
     const { description } = req.body;
-
-    console.log(description)
-    console.log(typeof(description))
 
     if (typeof(description) === "boolean") {
       
