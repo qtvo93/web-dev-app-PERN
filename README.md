@@ -31,6 +31,7 @@ CREATE TABLE todos(
   todo_id SERIAL,
   user_id UUID,
   description VARCHAR(255) NOT NULL,
+  status BOOL DEFAULT FALSE,
   PRIMARY KEY (todo_id),
   FOREIGN KEY (user_id) REFERENCES users(user_id)
 );
