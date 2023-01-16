@@ -19,7 +19,7 @@ const Register = ({ setAuth }) => {
     try {
       const body = { email, password, name };
       const response = await fetch(
-        "http://localhost:5000/auth/register",
+        "https://todo-app-back-end-vgzt.onrender.com:5000/auth/register",
         {
           method: "POST",
           headers: {
