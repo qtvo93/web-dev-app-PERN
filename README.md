@@ -54,6 +54,13 @@ $npm start
 
 -> cd into the back-end directory
 
+-> create your env variables
+$touch .env
+"""
+jwtSecret = "yoursecretstring"
+DBpassword = "yourDataBasePassword"
+"""
+
 $touch db.js
 
 -> change the password to your postgresql password
@@ -68,5 +75,4 @@ $nodemon server.js
 
 localhost:3000
 
-demo: https://www.youtube.com/watch?v=22eFqtrMseU
 
