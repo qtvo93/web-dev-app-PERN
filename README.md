@@ -1,9 +1,11 @@
 # web-dev-project
 The Todo web application was built using PostgresQL - Express - React - Nodejs (PERN) tech stack
 
-## Design Architecture
+### Design Architecture
 ![image](https://user-images.githubusercontent.com/72519491/219484565-582fdf82-e953-4dd3-b644-7f76b7ab3000.png)
 
+### Demo Interface
+![todoapp](https://user-images.githubusercontent.com/72519491/215282425-6eeb9c64-c208-426c-ac80-89eb6d7b79dd.png)
 
 -> How to set up the dev server:
 
@@ -46,7 +48,7 @@ Schema Tables
 
 $cd todo
 
-$npm install react-toastify react-router-dom@5.3.0
+$npm install 
 
 $npm start
 
@@ -57,18 +59,17 @@ $npm start
 
 -> create your env variables
 $touch .env
+
 """
 jwtSecret = "yoursecretstring"
+
 DBpassword = "yourDataBasePassword"
+
 """
-
-$touch db.js
-
--> change the password to your postgresql password
 
 $cd back-end
 
-$npm install pg jsonwebtoken bcrypt cors express nodemon
+$npm install
 
 $nodemon server.js
 
@@ -76,7 +77,6 @@ $nodemon server.js
 
 localhost:3000
 
-![todoapp](https://user-images.githubusercontent.com/72519491/215282425-6eeb9c64-c208-426c-ac80-89eb6d7b79dd.png)
 
 
 
