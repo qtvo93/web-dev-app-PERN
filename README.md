@@ -7,9 +7,16 @@ The Todo web application was built using PostgresQL - Express - React - Nodejs (
 ### Demo Interface
 ![todoapp](https://user-images.githubusercontent.com/72519491/215282425-6eeb9c64-c208-426c-ac80-89eb6d7b79dd.png)
 
--> How to set up the dev server:
+### Features:
+1/ Create account and Login for personal dashboard
+2/ Create, edit, remove todo tasks
+3/ Search for keywords
+4/ Filter by Complete/Incomplete tasks
+5/ Email todo list to your email
 
-# 1. Database:
+## -> How to set up the dev server on localhost:
+
+### 1. Database:
 
 -> Open PosgresQl and run:
 
@@ -43,7 +50,7 @@ Schema Tables
 ![111111111](https://user-images.githubusercontent.com/72519491/158517780-a4b2d9a2-6a0e-4825-9438-44cb592bda61.PNG)
 
 
-# 2. Front-end:
+### 2. Front-end:
 -> cd into the front-end directory
 
 $cd todo
@@ -53,7 +60,7 @@ $npm install
 $npm start
 
 
-# 3. Back-end:
+### 3. Back-end:
 
 -> cd into the back-end directory
 
@@ -73,7 +80,7 @@ $npm install
 
 $nodemon server.js
 
-# 4. Web browser demo:
+### 4. Web browser demo:
 
 localhost:3000
 
