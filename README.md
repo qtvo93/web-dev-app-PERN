@@ -42,11 +42,11 @@ $psql --username postgres
 
 -> enter your password
 
-CREATE DATABASE finalproject;
+$ CREATE DATABASE finalproject;
 
-(enable uuid_generate_v4() extension to use)
+**(enable uuid_generate_v4() extension to use)**
 
-CREATE TABLE users(
+$ CREATE TABLE users(
   user_id UUID DEFAULT uuid_generate_v4(),
   user_name VARCHAR(255) NOT NULL,
   user_email VARCHAR(255) NOT NULL UNIQUE,
@@ -54,7 +54,7 @@ CREATE TABLE users(
   PRIMARY KEY (user_id)
 );
 
-CREATE TABLE todos(
+$ CREATE TABLE todos(
   todo_id SERIAL,
   user_id UUID,
   description VARCHAR(255) NOT NULL,
@@ -82,9 +82,12 @@ $npm start
 $touch .env
 
 """
+
 jwtSecret = "yoursecretstring"
 
 DBpassword = "yourDataBasePassword"
+
+DatabaseURL = "finalproject"
 
 """
 
