@@ -18,7 +18,7 @@ const Login = ({ setAuth }) => {
     e.preventDefault();
     try {
       const body = { email, password };
-      const response = await fetch(
+      fetch(
         "http://localhost:5000/auth/login",
         {
           method: "POST",
@@ -27,20 +27,26 @@ const Login = ({ setAuth }) => {
           },
           body: JSON.stringify(body)
         }
-      );
+      ).then(async(response) =>{
+        if (response.status === 200){
+        const parseRes = await response.json();
 
-      const parseRes = await response.json();
-
-      if (parseRes.jwtToken) {
-        localStorage.setItem("token", parseRes.jwtToken);
-        setAuth(true);
-        toast.success("Logged in Successfully");
-      } else {
-        setAuth(false);
-        toast.error(parseRes);
-      }
+        if (parseRes.jwtToken) {
+          localStorage.setItem("token", parseRes.jwtToken);
+          setAuth(true);
+          toast.success("Logged in Successfully");
+        } else {
+          setAuth(false);
+          console.log(response)
+          toast.error(parseRes);
+        }} else {
+          setAuth(false);
+          console.log(response)
+          toast.error(response.statusText==="Unauthorized"?"Wrong email or password!":response.statusText);
+        }
+      })
     } catch (err) {
-      console.error(err.message);
+      console.log(err);
     }
   };
 

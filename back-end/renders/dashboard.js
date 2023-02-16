@@ -44,7 +44,6 @@ router.put("/todos/:id",authorize , async (req, res) => {
 
     if (typeof(description) === "boolean") {
       
-      console.log("alibabaaaa")
       const updateTodo = await pool.query(
         "UPDATE todos SET status = $1 WHERE todo_id = $2 AND user_id = $3 RETURNING *",
         [description, id, req.user.id]
@@ -56,7 +55,7 @@ router.put("/todos/:id",authorize , async (req, res) => {
   
       res.json("Todo was updated");
     } else {
-      console.log("aloha")
+  
       const updateTodo = await pool.query(
         "UPDATE todos SET description = $1 WHERE todo_id = $2 AND user_id = $3 RETURNING *",
         [description, id, req.user.id]
