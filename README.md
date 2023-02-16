@@ -51,10 +51,18 @@ CREATE TABLE todos(
   FOREIGN KEY (user_id) REFERENCES users(user_id)
 );
 
-Schema Tables
+### Database Schema:
 
-![111111111](https://user-images.githubusercontent.com/72519491/158517780-a4b2d9a2-6a0e-4825-9438-44cb592bda61.PNG)
+![image](https://user-images.githubusercontent.com/72519491/219490248-b975a8d9-3565-40c6-8a18-13b8c80da3fe.png)
 
+### Database Examples:
+Table users:
+
+![image](https://user-images.githubusercontent.com/72519491/219488631-fe3e99e9-8084-4c1c-af2d-d065c3098566.png)
+
+Table todos:
+
+![image](https://user-images.githubusercontent.com/72519491/219488999-1c5bdc83-93cd-4f31-b837-212bd9560c98.png)
 
 ### 2. Front-end:
 -> cd into the front-end directory
