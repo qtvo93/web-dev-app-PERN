@@ -69,6 +69,18 @@ $CREATE TABLE todos(
 
 ### Option 1 (Docker):
 
+$touch back-end/.env
+
+"""
+
+jwtSecret = "yoursecretstring"
+
+DBpassword = "yourDataBasePassword"
+
+DatabaseURL = "yourDataBaseName"
+
+"""
+
 $docker-compose up --build
 
 
