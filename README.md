@@ -36,6 +36,8 @@ Table todos:
 
 ### 1. Database:
 
+I will update an SQL setup script later, currently database can be set up manually like this:
+
 -> Open PosgresQl and run:
 
 $psql --username postgres
@@ -63,8 +65,16 @@ $CREATE TABLE todos(
   FOREIGN KEY (user_id) REFERENCES users(user_id)
 );
 
+### 2. Set up front-end and back-end:
 
-### 2. Front-end:
+### Option 1 (Docker):
+
+$docker-compose up --build
+
+
+### Option 2 (Manual):
+
+### A. Front-end:
 -> cd into the front-end directory
 
 $cd todo
@@ -74,7 +84,7 @@ $npm install
 $npm start
 
 
-### 3. Back-end:
+### B. Back-end:
 
 -> cd into the back-end directory
 
@@ -98,7 +108,7 @@ $npm install
 
 $nodemon server.js
 
-### 4. Web browser demo:
+### 3. Web browser demo:
 
 localhost:3000
 
