@@ -7,6 +7,9 @@ The Todo web application was built using PostgresQL - Express - React - Nodejs (
 ### Demo Interface
 ![todoapp](https://user-images.githubusercontent.com/72519491/215282425-6eeb9c64-c208-426c-ac80-89eb6d7b79dd.png)
 
+### Design
+![image](https://github.com/user-attachments/assets/c7207668-a8b0-4483-b786-d92ac7d91ee3)
+
 ### Features:
 
 1/ Create account and Login for personal dashboard
